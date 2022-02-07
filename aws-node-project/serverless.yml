@@ -1,0 +1,17 @@
+service: aws-node-project
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  hello:
+    handler: handler.hello
+custom:
+  serverless-offline:
+    httpsProtocol: "dev-certs"
+    httpPort: 3000
+    stageVariables:
+      foo: "bar"
